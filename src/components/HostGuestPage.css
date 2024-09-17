@@ -1,0 +1,22 @@
+/* src/components/HostGuestPage.css */
+.host-page, .guest-page {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .role-selection {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .role-selection h1 {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .role-selection button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  

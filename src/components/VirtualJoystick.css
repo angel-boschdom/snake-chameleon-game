@@ -1,0 +1,23 @@
+/* src/components/VirtualJoystick.css */
+.virtual-joystick-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .joystick-zone {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: calc(50% - 75px);
+    bottom: 10%;
+    pointer-events: all;
+  }
+  
+  .nipple {
+    z-index: 100;
+  }
+  
