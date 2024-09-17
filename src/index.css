@@ -1,24 +1,23 @@
-canvas {
-    background-color: #eee;
-    display: block;
-    margin: 0 auto;
-    border: 1px solid black;
-    
-    /* Default: 90% of the viewport width with 2:3 aspect ratio */
-    width: 90vw;
-    height: calc(90vw * 3 / 2);
-    
-    /* Maximum dimensions to prevent the canvas from becoming too large */
-    max-width: 400px;
-    max-height: 675px;
+/* src/index.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
   }
   
-  /* For wider screens (greater width than height) */
-  @media (min-aspect-ratio: 3/2) {
-    canvas {
-      /* For wider screens, use 50% of the viewport width */
-      width: 50vw;
-      height: calc(50vw * 3 / 2);  /* Maintain the 2:3 aspect ratio */
+  #gameContainer {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @media (min-width: 600px) {
+    #gameContainer {
+      max-width: 600px;
     }
   }
   

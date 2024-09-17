@@ -31,8 +31,16 @@ function App() {
     clearTimeout(timerRef.current);
   };
 
+  const handleRestart = () => {
+    setTimeLeft(60);
+    setSnakeApplesEaten(0);
+    setChameleonApplesEaten(0);
+    setGameOutcome('');
+    setGameOver(false);
+  };
+
   return (
-    <div>
+    <div id="gameContainer">
       <Timer timeLeft={timeLeft} />
       <GameCanvas
         timeLeft={timeLeft}
@@ -47,7 +55,7 @@ function App() {
         snakeApplesEaten={snakeApplesEaten}
         chameleonApplesEaten={chameleonApplesEaten}
       />
-      {gameOver && <GameOutcome message={gameOutcome} />}
+      {gameOver && <GameOutcome message={gameOutcome} onRestart={handleRestart} />}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 /* src/components/GameCanvas.js */
 import React, { useEffect, useRef, useState } from 'react';
+import './GameCanvas.css';
 
 function GameCanvas(props) {
   const {
@@ -56,6 +57,14 @@ function GameCanvas(props) {
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+
+    // Adjust canvas size based on parent container
+    const aspectRatio = 2 / 3; // Width:Height
+    const canvasWidth = canvas.parentElement.clientWidth;
+    const canvasHeight = canvasWidth / aspectRatio;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
     const cellWidth = canvas.width / gridWidth;
     const cellHeight = canvas.height / gridHeight;
 
@@ -231,26 +240,29 @@ function GameCanvas(props) {
     function draw() {
       // Clear the canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       // Draw apples
-      ctx.fillStyle = 'red';
-      for (let i = 0; i < gameState.apples.length; i++) {
+      ctx.fillStyle = '#f00'; // Bright red
+      gameState.apples.forEach((apple) => {
         ctx.fillRect(
-          gameState.apples[i].x * cellWidth,
-          gameState.apples[i].y * cellHeight,
+          apple.x * cellWidth,
+          apple.y * cellHeight,
           cellWidth,
           cellHeight
         );
-      }
+      });
+
       // Draw snake
-      ctx.fillStyle = 'green';
-      for (let i = 0; i < gameState.snake.length; i++) {
+      ctx.fillStyle = '#0f0'; // Bright green
+      gameState.snake.forEach((segment) => {
         ctx.fillRect(
-          gameState.snake[i].x * cellWidth,
-          gameState.snake[i].y * cellHeight,
+          segment.x * cellWidth,
+          segment.y * cellHeight,
           cellWidth,
           cellHeight
         );
-      }
+      });
+
       // Draw chameleon if visible
       if (gameState.chameleonVisible) {
         ctx.drawImage(
@@ -372,19 +384,19 @@ function GameCanvas(props) {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, [gameState, gameOver, handleGameOutcome, setChameleonApplesEaten, setSnakeApplesEaten, gridWidth, gridHeight]);
+  }, [
+    gameState,
+    gameOver,
+    handleGameOutcome,
+    setChameleonApplesEaten,
+    setSnakeApplesEaten,
+    gridWidth,
+    gridHeight,
+  ]);
 
   if (!gameState) return null;
 
-  return (
-    <canvas
-    id="gameCanvas"
-    ref={canvasRef}
-    width={window.innerWidth * 0.9}  // 90% of viewport width
-    height={window.innerHeight * 0.9} // 90% of viewport height
-    style={{ maxWidth: '450px', maxHeight: '675px' }}  // Keep the max dimensions for larger screens
-    ></canvas>
-  );
+  return <canvas id="gameCanvas" ref={canvasRef}></canvas>;
 }
 
 export default GameCanvas;
