@@ -1,13 +1,24 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+canvas {
+    background-color: #eee;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+    
+    /* Default: 90% of the viewport width with 2:3 aspect ratio */
+    width: 90vw;
+    height: calc(90vw * 3 / 2);
+    
+    /* Maximum dimensions to prevent the canvas from becoming too large */
+    max-width: 400px;
+    max-height: 675px;
+  }
+  
+  /* For wider screens (greater width than height) */
+  @media (min-aspect-ratio: 3/2) {
+    canvas {
+      /* For wider screens, use 50% of the viewport width */
+      width: 50vw;
+      height: calc(50vw * 3 / 2);  /* Maintain the 2:3 aspect ratio */
+    }
+  }
+  
