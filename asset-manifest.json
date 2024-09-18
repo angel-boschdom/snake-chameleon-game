@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/snake-chameleon-game/static/css/main.67ff13dc.css",
-    "main.js": "/snake-chameleon-game/static/js/main.dc5b91d9.js",
+    "main.js": "/snake-chameleon-game/static/js/main.5378039c.js",
     "index.html": "/snake-chameleon-game/index.html",
     "main.67ff13dc.css.map": "/snake-chameleon-game/static/css/main.67ff13dc.css.map",
-    "main.dc5b91d9.js.map": "/snake-chameleon-game/static/js/main.dc5b91d9.js.map"
+    "main.5378039c.js.map": "/snake-chameleon-game/static/js/main.5378039c.js.map"
   },
   "entrypoints": [
     "static/css/main.67ff13dc.css",
-    "static/js/main.dc5b91d9.js"
+    "static/js/main.5378039c.js"
   ]
 }
