@@ -1,6 +1,6 @@
 // src/components/WASDVisualizer.js
 import React, { useState, useEffect } from 'react';
-import './WASDVisualizer.css';
+import '../styles/WASDVisualizer.css';
 
 function WASDVisualizer({ onMove }) {
   const [keysPressed, setKeysPressed] = useState({

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import GameCanvas from './GameCanvas';
-import './HostGuestPage.css';
+import '../styles/HostGuestPage.css';
 
 function GuestPage() {
   const [offer, setOffer] = useState('');

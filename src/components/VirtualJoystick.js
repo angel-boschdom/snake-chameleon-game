@@ -1,7 +1,7 @@
 // src/components/VirtualJoystick.js
 import React, { useEffect, useState } from 'react';
 import nipplejs from 'nipplejs';
-import './VirtualJoystick.css';
+import '../styles/VirtualJoystick.css';
 
 function VirtualJoystick({ onMove }) {
   const [joystick, setJoystick] = useState(null);
